@@ -1,0 +1,33 @@
+version: '3.9'
+services:
+  python:
+    container_name: python
+    restart: always
+    build: ./python/
+    command: python ./youtube-lesson/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ../:/home/sites/youtube-lesson/
+    ports:
+      - "8000:8000"
+  
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: always
+    ports:
+      - 89:8080
+
+  pgdb:
+    # Использование готового образа postgres
+    image: postgres
+    # Задание переменных окружения для контейнера с postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=trilshane
+      - POSTGRES_PASSWORD=Triltril1
+     # Задание имени контейнера для сервиса pgdb
+    container_name: pgdb
+     # Связывание тома с директорией в контейнере для сохранения данных postgres
+    volumes:
+      - c:\projects/posgres:/var/lib/postgresql/data/
+

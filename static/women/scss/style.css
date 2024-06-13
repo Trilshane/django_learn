@@ -172,9 +172,9 @@ img {
       max-width: 150px;
       height: auto; }
 
-p.link-read-post {
+.link-read-post {
   text-align: right; }
-  p.link-read-post a {
+  .link-read-post a {
     padding: 10px;
     min-width: 100px;
     background: #333671;
@@ -235,7 +235,7 @@ p.link-read-post {
   background: #3f4137;
   max-width: 200px;
   margin: 0 auto;
-  padding: 5p x 20px 5px 20px;
+  padding: 5px 20px 5px 20px;
   border-radius: 10px;
   font-size: 20px; }
 

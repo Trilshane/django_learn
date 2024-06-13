@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, HttpResponseNotFound
 from django.core.paginator import Paginator
-
+from rest_framework import generics
+from .serializers import WomenSerializer
 from .models import Women, Category, TagPost
 from .forms import AddPostForm
 
@@ -17,6 +18,11 @@ cats_db = [
     {"id": 2, "name": "Певицы"},
     {"id": 3, "name": "Спортсменки"},
 ]
+
+
+class WomenAPIView(generics.ListAPIView):
+    queryset = Women.objects.all()
+    serializer_class = WomenSerializer
 
 
 def index(request):

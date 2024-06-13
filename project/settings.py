@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.postgres",
     "sass_processor",
     "debug_toolbar",
+    "rest_framework",
 ]
 
 STATICFILES_FINDERS = [

@@ -19,11 +19,12 @@ from project import settings
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.urls import path, include
-from women.views import page_not_found
+from women.views import WomenAPIView, page_not_found
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("women.urls")),
+    path("api/v1/womenlist/", WomenAPIView.as_view()),
 ]
 
 if settings.DEBUG:

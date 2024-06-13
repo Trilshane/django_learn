@@ -6,3 +6,6 @@ django-compressor
 django-sass-processor
 django-debug-toolbar
 djlint
+djangorestframework
+markdown       
+django-filter
